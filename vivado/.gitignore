@@ -1,0 +1,25 @@
+# Vivado build and temp files
+*.jou
+*.log
+*.str
+*.tmp
+*.cache/
+*.webtalk/
+*.runs/
+*.hw/
+*.sim/
+*.ip_user_files/
+*.Xil/
+*.data/
+*.backup/
+*.wdb
+*.restore.log
+
+# Vivado auto-generated output
+*.dcp
+*.bit
+*.bin
+*.mcs
+
+# Optional: system/user-specific settings
+*.xpr.user
