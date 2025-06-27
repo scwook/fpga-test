@@ -78,17 +78,17 @@
 # ----------------------------------------------------------------------------
 # Clock Source - Bank 13
 # ----------------------------------------------------------------------------
- set_property PACKAGE_PIN Y9 [get_ports {clk_100mhz}];  # "GCLK"
- set_property IOSTANDARD LVCMOS33 [get_ports clk_100mhz];
- create_clock -period 10.000 -name sys_clk -waveform {0.000 5.000} clk_100mhz
+ set_property PACKAGE_PIN Y9 [get_ports {clock}];  # "GCLK"
+ set_property IOSTANDARD LVCMOS33 [get_ports clock];
+ create_clock -period 10.000 -name sys_clk -waveform {0.000 5.000} clock
 
 # ----------------------------------------------------------------------------
 # JA Pmod - Bank 13
 # ----------------------------------------------------------------------------
-#set_property PACKAGE_PIN Y11  [get_ports {count_0}];  # "JA1"
-#set_property PACKAGE_PIN AA11 [get_ports {trigger_0}];  # "JA2"
+set_property PACKAGE_PIN Y11  [get_ports {spi_sync}];  # "JA1"
+set_property PACKAGE_PIN AA11 [get_ports {spi_data}];  # "JA2"
 #set_property PACKAGE_PIN Y10  [get_ports {JA3}];  # "JA3"
-#set_property PACKAGE_PIN AA9  [get_ports {JA4}];  # "JA4"
+set_property PACKAGE_PIN AA9  [get_ports {spi_clock}];  # "JA4"
 #set_property PACKAGE_PIN AB11 [get_ports {JA7}];  # "JA7"
 #set_property PACKAGE_PIN AB10 [get_ports {JA8}];  # "JA8"
 #set_property PACKAGE_PIN AB9  [get_ports {JA9}];  # "JA9"
@@ -98,14 +98,14 @@
 # ----------------------------------------------------------------------------
 # JB Pmod - Bank 13
 # ----------------------------------------------------------------------------
-set_property PACKAGE_PIN W12 [get_ports {LDAC_N}];  # "JB1"
-set_property PACKAGE_PIN W11 [get_ports {RESET_N}];  # "JB2"
-set_property PACKAGE_PIN V10 [get_ports {CLR_N}];  # "JB3"
-#set_property PACKAGE_PIN W8 [get_ports {JB4}];  # "JB4"
-set_property PACKAGE_PIN V12 [get_ports {SYNC_N}];  # "JB7"
-#set_property PACKAGE_PIN W10 [get_ports {JB8}];  # "JB8"
-set_property PACKAGE_PIN V9 [get_ports {SDO}];  # "JB9"
-set_property PACKAGE_PIN V8 [get_ports {SCLK}];  # "JB10"
+#set_property PACKAGE_PIN W12 [get_ports {spi_sync}];  # "JB1"
+#set_property PACKAGE_PIN W11 [get_ports {spi_data}];  # "JB2"
+#set_property PACKAGE_PIN V10 [get_ports {CLR}];  # "JB3"
+#set_property PACKAGE_PIN W8 [get_ports {spi_clk}];  # "JB4"
+#set_property PACKAGE_PIN V12 [get_ports {LDAC}];  # "JB7"
+#set_property PACKAGE_PIN W10 [get_ports {RESET}];  # "JB8"
+#set_property PACKAGE_PIN V9 [get_ports {CLR}];  # "JB9"
+#set_property PACKAGE_PIN V8 [get_ports {sclk}];  # "JB10"
 
 # ----------------------------------------------------------------------------
 # JC Pmod - Bank 13
@@ -173,14 +173,14 @@ set_property PACKAGE_PIN V8 [get_ports {SCLK}];  # "JB10"
 # ----------------------------------------------------------------------------
 # User LEDs - Bank 33
 # ----------------------------------------------------------------------------
-#set_property PACKAGE_PIN T22 [get_ports {led[0]}]
-#set_property PACKAGE_PIN T21 [get_ports {led[1]}]
-#set_property PACKAGE_PIN U22 [get_ports {led[2]}]
-#set_property PACKAGE_PIN U21 [get_ports {led[3]}]
-#set_property PACKAGE_PIN V22 [get_ports {led[4]}]
-#set_property PACKAGE_PIN W22 [get_ports {led[5]}]
-#set_property PACKAGE_PIN U19 [get_ports {led[6]}]
-#set_property PACKAGE_PIN U14 [get_ports {led[7]}]
+set_property PACKAGE_PIN T22 [get_ports {led}];
+#set_property PACKAGE_PIN T21 [get_ports {led[1]}];
+#set_property PACKAGE_PIN U22 [get_ports {led[2]}];
+#set_property PACKAGE_PIN U21 [get_ports {led[3]}];
+#set_property PACKAGE_PIN V22 [get_ports {led[4]}];
+#set_property PACKAGE_PIN W22 [get_ports {led[5]}];
+#set_property PACKAGE_PIN U19 [get_ports {led[6]}];
+#set_property PACKAGE_PIN U14 [get_ports {led[7]}];
 
 #set_property IOSTANDARD LVCMOS33 [get_ports {led[0]}]
 #set_property IOSTANDARD LVCMOS33 [get_ports {led[1]}]
@@ -212,9 +212,9 @@ set_property PACKAGE_PIN V8 [get_ports {SCLK}];  # "JB10"
 # ----------------------------------------------------------------------------
 # User Push Buttons - Bank 34
 # ----------------------------------------------------------------------------
-set_property PACKAGE_PIN P16 [get_ports {btn1}];  # "BTNC"
+set_property PACKAGE_PIN P16 [get_ports {reset}];  # "BTNC"
 #set_property PACKAGE_PIN R16 [get_ports {BTND}];  # "BTND"
-set_property PACKAGE_PIN N15 [get_ports {btn0}];  # "BTNL"
+#set_property PACKAGE_PIN N15 [get_ports {btn0}];  # "BTNL"
 #set_property PACKAGE_PIN R18 [get_ports {rbtn_0}];  # "BTNR"
 #set_property PACKAGE_PIN T18 [get_ports {BTNU}];  # "BTNU"
 
@@ -244,9 +244,9 @@ set_property PACKAGE_PIN N15 [get_ports {btn0}];  # "BTNL"
 ## ----------------------------------------------------------------------------
 ## User DIP Switches - Bank 35
 ## ----------------------------------------------------------------------------
-#set_property PACKAGE_PIN F22 [get_ports {sw[0]}]
-#set_property PACKAGE_PIN G22 [get_ports {sw[1]}]
-#set_property PACKAGE_PIN H22 [get_ports {sw[2]}]
+#set_property PACKAGE_PIN F22 [get_ports {LDAC_SW}];
+#set_property PACKAGE_PIN G22 [get_ports {RESET_SW}];
+#set_property PACKAGE_PIN H22 [get_ports {CLR_SW}]
 #set_property PACKAGE_PIN F21 [get_ports {sw[3]}]
 #set_property PACKAGE_PIN H19 [get_ports {sw[4]}]
 #set_property PACKAGE_PIN H18 [get_ports {sw[5]}]
@@ -369,7 +369,7 @@ set_property PACKAGE_PIN N15 [get_ports {btn0}];  # "BTNL"
 # ----------------------------------------------------------------------------
 
 # Note that the bank voltage for IO Bank 33 is fixed to 3.3V on ZedBoard.
-#set_property IOSTANDARD LVCMOS33 [get_ports -of_objects [get_iobanks 33]];
+set_property IOSTANDARD LVCMOS33 [get_ports -of_objects [get_iobanks 33]];
 
 # Set the bank voltage for IO Bank 34 to 1.8V by default.
 # set_property IOSTANDARD LVCMOS33 [get_ports -of_objects [get_iobanks 34]];
@@ -378,8 +378,8 @@ set_property IOSTANDARD LVCMOS25 [get_ports -of_objects [get_iobanks 34]];
 
 # Set the bank voltage for IO Bank 35 to 1.8V by default.
 # set_property IOSTANDARD LVCMOS33 [get_ports -of_objects [get_iobanks 35]];
-#set_property IOSTANDARD LVCMOS25 [get_ports -of_objects [get_iobanks 35]]
+#set_property IOSTANDARD LVCMOS25 [get_ports -of_objects [get_iobanks 35]];
 #set_property IOSTANDARD LVCMOS18 [get_ports -of_objects [get_iobanks 35]];
 
 # Note that the bank voltage for IO Bank 13 is fixed to 3.3V on ZedBoard.
- set_property IOSTANDARD LVCMOS33 [get_ports -of_objects [get_iobanks 13]];
+set_property IOSTANDARD LVCMOS33 [get_ports -of_objects [get_iobanks 13]];
