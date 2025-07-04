@@ -29,7 +29,7 @@ module cn0531 (
 );
 
 reg [4:0] state;
-reg [4:0] nextState;
+//reg [4:0] nextState;
 reg [23:0] spiData;
 reg spiLoadData;
 wire spiDone;
@@ -41,23 +41,26 @@ localparam CONFIG   = 3'd1;
 localparam SEND     = 3'd2;
 localparam INIT     = 3'd3;
 localparam DONE     = 3'd4;
-//localparam DELAY    = 3'd5;
+localparam DELAY    = 3'd5;
 
 always @(posedge clock)
 begin
     if(reset)
     begin
         state <= IDLE;
-        nextState <= IDLE;
+//        nextState <= IDLE;
         spiData <= 24'h000000;
         spiLoadData <= 1'b0;
         led <= 1'b0;
+        startDelay <= 1'b0;
+
     end
     else
     begin
         case(state)
             IDLE:begin
                 state <= CONFIG;
+                
             end
             
 //            INIT:begin
@@ -66,23 +69,31 @@ begin
 //                if(spiDone)
 //                begin
 //                    spiLoadData <= 1'b0;
-//                    state <= DELAY;
 //                    led <= led + 1;
 //                end
 //            end
             
             CONFIG:begin
-                spiData <= 24'h200010;
+                spiData <= 24'h200010; // Set configureaion register: RBUF:1, OPGND:0, DACTRI:0, BIN/2sC:0, SDODIS:0, LIN COMP:0000
                 spiLoadData <= 1'b1;
                 if(spiDone)
                 begin
                     spiLoadData <= 1'b0;
+                    state <= DELAY;
+                end
+            end
+            
+            DELAY:begin
+                startDelay <= 1'b1;
+                if(delayDone)
+                begin
                     state <= SEND;
+                    startDelay <= 1'b0;
                 end
             end
             
             SEND:begin
-                spiData <= 24'h000000;
+                spiData <= 24'h199999; //Set Init output voltage: 1V (FFFFF: 5V, 7FFFF:0V ,00000:-5V)
                 spiLoadData <= 1'b1;
                 if(spiDone)
                 begin
@@ -109,10 +120,10 @@ spiControl ad5791 (
 .spi_sync(spi_sync)
 );
 
-//delayGen delay (
-// .clock(clock),
-// .delayEn(startDelay),
-// .delayDone(delayDone)
-//);
+delayGen delay (
+ .clock(clock),
+ .delayEn(startDelay),
+ .delayDone(delayDone)
+);
 
 endmodule

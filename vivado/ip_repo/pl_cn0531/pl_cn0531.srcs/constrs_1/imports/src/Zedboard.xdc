@@ -88,7 +88,7 @@
 set_property PACKAGE_PIN Y11  [get_ports {spi_sync}];  # "JA1"
 set_property PACKAGE_PIN AA11 [get_ports {spi_data}];  # "JA2"
 #set_property PACKAGE_PIN Y10  [get_ports {JA3}];  # "JA3"
-set_property PACKAGE_PIN AA9  [get_ports {spi_clk}];  # "JA4"
+set_property PACKAGE_PIN AA9  [get_ports {spi_clock}];  # "JA4"
 #set_property PACKAGE_PIN AB11 [get_ports {JA7}];  # "JA7"
 #set_property PACKAGE_PIN AB10 [get_ports {JA8}];  # "JA8"
 #set_property PACKAGE_PIN AB9  [get_ports {JA9}];  # "JA9"
@@ -180,7 +180,7 @@ set_property PACKAGE_PIN U21 [get_ports {led[3]}];
 set_property PACKAGE_PIN V22 [get_ports {led[4]}];
 set_property PACKAGE_PIN W22 [get_ports {led[5]}];
 set_property PACKAGE_PIN U19 [get_ports {led[6]}];
-set_property PACKAGE_PIN U14 [get_ports {led[7]}];
+set_property PACKAGE_PIN U14 [get_ports {tag}];
 
 #set_property IOSTANDARD LVCMOS33 [get_ports {led[0]}]
 #set_property IOSTANDARD LVCMOS33 [get_ports {led[1]}]
@@ -212,7 +212,7 @@ set_property PACKAGE_PIN U14 [get_ports {led[7]}];
 # ----------------------------------------------------------------------------
 # User Push Buttons - Bank 34
 # ----------------------------------------------------------------------------
-set_property PACKAGE_PIN P16 [get_ports {reset}];  # "BTNC"
+set_property PACKAGE_PIN P16 [get_ports {RESET_BTN}];  # "BTNC"
 #set_property PACKAGE_PIN R16 [get_ports {BTND}];  # "BTND"
 #set_property PACKAGE_PIN N15 [get_ports {btn0}];  # "BTNL"
 #set_property PACKAGE_PIN R18 [get_ports {rbtn_0}];  # "BTNR"

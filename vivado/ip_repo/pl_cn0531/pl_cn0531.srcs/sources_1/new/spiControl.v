@@ -21,14 +21,14 @@
 
 
 module spiControl(
-input clock,
-input reset,
+input        clock,
+input        reset_n,
 input [23:0] data_in,
-input load_data,
-output reg done_send,
-output     spi_clock,
-output reg spi_data,
-output reg spi_sync
+input        spi_load,
+output   reg spi_done,
+output       spi_clock,
+output   reg spi_data,
+output   reg spi_sync
 );
     
 reg [8:0] counter = 0;
@@ -63,11 +63,11 @@ end
 
 always  @(posedge clock_10)
 begin
-    if(reset)
+    if(!reset_n)
     begin
         state <= IDLE;
         dataCount <= 0;
-        done_send <= 1'b0;
+        spi_done <= 1'b0;
         CE <= 0;
         spi_data <= 1'b0;
         spi_sync <= 1'b1;
@@ -76,7 +76,7 @@ begin
     begin
         case(state)
             IDLE:begin
-                if(load_data)
+                if(spi_load)
                 begin
                     shiftReg <= data_in;
                     state <= SEND;
@@ -95,13 +95,13 @@ begin
                     state <= DONE;
             end
             DONE:begin
-                done_send <= 1'b1;
+                spi_done <= 1'b1;
                 CE <= 0;
                 spi_sync <= 1'b1;
                 
-                if(!load_data)
+                if(!spi_load)
                 begin
-                    done_send <= 1'b0;
+                    spi_done <= 1'b0;
                     state <= IDLE;
                 end
             end

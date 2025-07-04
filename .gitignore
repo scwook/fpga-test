@@ -1,25 +1,68 @@
-# Vivado build and temp files
+# Vivado Build Files
 *.jou
 *.log
 *.str
-*.tmp
-*.cache/
-*.webtalk/
+*.wdb
+*.wcfg
+*.dmp
+*.pb
+*.html
+*.zip
+*.gz
+
+# Vivado Generated Directories
+.cache/
+.hw/
+.ip_user_files/
+.sim/
+.srcs/
+.xpr.cache/
+.vivado/
+.xgui/
+
+# Vivado Backup Files
+*.bak
+*.backup.*
+*.orig
+
+# Vivado Project Generated
+*.sdk/
 *.runs/
-*.hw/
-*.sim/
+*.gen/
 *.ip_user_files/
 *.Xil/
-*.data/
-*.backup/
-*.wdb
-*.restore.log
 
-# Vivado auto-generated output
-*.dcp
-*.bit
+# Vitis Build Output
+Debug/
+Release/
+_build/
+.metadata/
+.cache/
+.mss/
+.xsdk/
+.hwdef/
+sdk/
+export/
+
+# Vitis ELF, bin, etc.
+*.elf
 *.bin
-*.mcs
+*.map
+*.log
+*.xml
+*.xclbin
+*.xsa
+*.vscode/
 
-# Optional: system/user-specific settings
-*.xpr.user
+# Vitis Platform/Domain Build
+platform/export/
+platform/hw/
+platform/sw/
+platform/system/
+platform/psu_cortexa53_0/
+
+# Misc
+*.tmp
+*.swp
+*.DS_Store
+Thumbs.db

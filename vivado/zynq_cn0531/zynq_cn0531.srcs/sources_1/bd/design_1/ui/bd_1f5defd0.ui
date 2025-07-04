@@ -1,0 +1,45 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Default View_ScaleFactor":"1.0",
+   "Default View_TopLeft":"-175,-132",
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0 TLS
+#  -string -flagsOSRD
+preplace port DDR -pg 1 -lvl 5 -x 1360 -y 400 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -lvl 5 -x 1360 -y 420 -defaultsOSRD
+preplace port port-id_RESET_BTN_0 -pg 1 -lvl 0 -x -10 -y 330 -defaultsOSRD
+preplace port port-id_spi_clock_0 -pg 1 -lvl 5 -x 1360 -y 180 -defaultsOSRD
+preplace port port-id_spi_data_0 -pg 1 -lvl 5 -x 1360 -y 200 -defaultsOSRD
+preplace port port-id_spi_sync_0 -pg 1 -lvl 5 -x 1360 -y 160 -defaultsOSRD
+preplace portBus led_0 -pg 1 -lvl 5 -x 1360 -y 220 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -x 230 -y 480 -defaultsOSRD
+preplace inst cn0531_0 -pg 1 -lvl 4 -x 1210 -y 200 -defaultsOSRD
+preplace inst axi_smc -pg 1 -lvl 2 -x 610 -y 220 -defaultsOSRD
+preplace inst rst_ps7_0_100M -pg 1 -lvl 1 -x 230 -y 230 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 3 -x 920 -y 80 -defaultsOSRD
+preplace inst axi_gpio_1 -pg 1 -lvl 3 -x 920 -y 250 -defaultsOSRD
+preplace netloc RESET_BTN_0_1 1 0 4 NJ 330 NJ 330 NJ 330 1090J
+preplace netloc axi_gpio_0_gpio_io_o 1 3 1 1080 90n
+preplace netloc axi_gpio_1_gpio_io_o 1 3 1 1100 220n
+preplace netloc cn0531_0_led 1 4 1 1340 220n
+preplace netloc cn0531_0_spi_clock 1 4 1 1340J 170n
+preplace netloc cn0531_0_spi_data 1 4 1 1320J 190n
+preplace netloc cn0531_0_spi_sync 1 4 1 1330J 160n
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 20 340 470 300 760 160 NJ
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 2 10 130 440
+preplace netloc rst_ps7_0_100M_peripheral_aresetn 1 1 3 450 140 770 170 1070
+preplace netloc axi_smc_M00_AXI 1 2 1 750 60n
+preplace netloc axi_smc_M01_AXI 1 2 1 N 230
+preplace netloc processing_system7_0_DDR 1 1 4 NJ 400 NJ 400 NJ 400 NJ
+preplace netloc processing_system7_0_FIXED_IO 1 1 4 NJ 420 NJ 420 NJ 420 NJ
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 1 460 200n
+levelinfo -pg 1 -10 230 610 920 1210 1360
+pagesize -pg 1 -db -bbox -sgen -160 0 1490 620
+"
+}
+{
+   "da_axi4_cnt":"3",
+   "da_board_cnt":"3",
+   "da_clkrst_cnt":"1",
+   "da_ps7_cnt":"1"
+}
