@@ -15,7 +15,7 @@
 .hw/
 .ip_user_files/
 .sim/
-.srcs/
+#.srcs/
 .xpr.cache/
 .vivado/
 .xgui/
@@ -27,7 +27,7 @@
 
 # Vivado Project Generated
 *.sdk/
-*.runs/
+#*.runs/
 *.gen/
 *.ip_user_files/
 *.Xil/
