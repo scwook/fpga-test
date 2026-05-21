@@ -23,7 +23,6 @@
 *.csv
 *.html
 *.json
-*.tcl
 *.xml
 *.txt
 *.prp
