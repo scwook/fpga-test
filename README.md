@@ -7,5 +7,7 @@ FPGA code example and test
 - (Auboard 15P) auboard-pcie-aurora: data transfer using pcie and aurora
    test_pattern.py: pattern data transfer test for debug
    test_file.py: file trasnfer test
- 
+
+- (Zybo Z7-20) zybo-hdmi-out: hdmi text output
+
 ### vivado ip
