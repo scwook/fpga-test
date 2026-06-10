@@ -9,5 +9,6 @@ FPGA code example and test
    test_file.py: file trasnfer test
 
 - (Zybo Z7-20) zybo-hdmi-out: hdmi text output
+- (Zybo Z7-20) zybo-hdmi-passthrough: hdmi in/out passthrough
 
 ### vivado ip
