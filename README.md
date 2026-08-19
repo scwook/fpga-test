@@ -11,4 +11,10 @@ FPGA code example and test
 - (Zybo Z7-20) zybo-hdmi-out: hdmi text output
 - (Zybo Z7-20) zybo-hdmi-passthrough: hdmi in/out passthrough
 
+- (Zedboard) zedboard-cls-daq: logic pulse counter for raon cls daq
+    required ip: ip-dac-cn0531, ip-pulse-counter-saxi, ip-zedboard-oled
+
 ### vivado ip
+- ip-dac-cn0531: analoge device cn0531 dac board
+- ip-pulse-counter-saxi: pulse counter
+- ip-zedboard-oled: zedboard on-board oled
